@@ -1,12 +1,23 @@
 /* 顶部导航栏 */
 header {
-  background: #111;
+    background: linear-gradient(135deg, #00ff88, #6c5ce7);
   padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+      padding: 1.8rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        color: #fff;
 }
 
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -14,10 +25,25 @@ header {
 }
 
 .logo {
-  height: 50px;
-  width: auto;
+    height: 40px; /* Slightly smaller for reduced header */
+    width: auto;
+    margin-right: 1.5rem;
 }
-
+.header-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.header-title-group h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    text-align: left;
+}
+.header-title-group p {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    text-align: left;
+}
 nav ul {
   list-style: none;
   display: flex;
