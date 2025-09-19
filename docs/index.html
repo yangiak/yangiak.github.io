@@ -5,13 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YK Pickleball</title>
   <style>
-    /* 基础设置 */
+    /* 动态渐变背景 */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #0f0f0f;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #f1f1f1;
+      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #2d3436, #000000);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
     }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     h1, h2 {
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -44,7 +52,7 @@
 
     /* 导航栏 */
     nav {
-      background: #1a1a1a;
+      background: rgba(0,0,0,0.7);
       display: flex;
       justify-content: center;
       gap: 30px;
@@ -70,21 +78,25 @@
       text-align: center;
     }
 
-    /* 视频区 */
-    #videos .main-video {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;
-      margin-bottom: 20px;
-      border: 3px solid #6c5ce7;
-      border-radius: 10px;
-      transition: border-color 0.3s;
+    /* 主视频 */
+    .main-video {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
     }
-
-    #videos .main-video:hover {
+    .main-video iframe {
+      width: 70%;
+      height: 500px;
+      border: 4px solid #6c5ce7;
+      border-radius: 15px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .main-video iframe:hover {
+      transform: scale(1.02);
       border-color: #ff3c78;
     }
 
+    /* 更多视频区 */
     .video-grid {
       display: flex;
       flex-wrap: wrap;
@@ -96,35 +108,10 @@
       height: 200px;
       border: 3px solid #6c5ce7;
       border-radius: 10px;
-      transition: transform 0.3s;
+      transition: transform 0.3s, border-color 0.3s;
     }
     .video-grid iframe:hover {
       transform: scale(1.05);
-      border-color: #ff3c78;
-    }
-
-    /* 新增的链接区 */
-    .link-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      max-width: 600px;
-      margin: auto;
-    }
-    .link-grid a {
-      font-size: 1.2rem;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: 2px solid #6c5ce7;
-      border-radius: 8px;
-      width: 100%;
-      text-align: center;
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-    .link-grid a:hover {
-      background: #6c5ce7;
-      color: #fff;
       border-color: #ff3c78;
     }
 
@@ -146,23 +133,11 @@
     /* 页脚 */
     footer {
       text-align: center;
-      background: #1a1a1a;
+      background: rgba(0,0,0,0.7);
       padding: 1.5rem;
       margin-top: 2rem;
       color: #aaa;
       font-size: 0.9rem;
-    }
-
-    /* 响应式设计 */
-    @media (max-width: 768px) {
-      .video-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .video-grid iframe {
-        width: 100%;
-        height: auto;
-      }
     }
   </style>
 </head>
@@ -174,31 +149,26 @@
 
   <nav>
     <a href="#videos">Videos</a>
-    <a href="#links">More Videos</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- 主视频展示 -->
   <section id="videos">
-    <h2>🎥 My Main Highlights</h2>
+    <h2>🎥 Featured Video</h2>
+    <div class="main-video">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/qDO2RGKxZvo?si=vRpwjqCGy1nZ1J44" title="AD-IN Open Play Series - EP04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <h2>More Videos</h2>
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/YYYYYYYYYYY" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/ZZZZZZZZZZZ" frameborder="0" allowfullscreen></iframe>
     </div>
-  </section>
 
-  <section id="links">
-    <h2>🔗 Other YouTube Videos</h2>
-    <div class="link-grid">
+    <h2>📺 More Videos</h2>
+    <div class="video-grid">
       <a href="https://www.youtube.com/watch?v=--3HnIwlQ88" target="_blank">AD-IN Peak Series - EP01 (4.0+ Men's Double)</a>
       <a href="https://www.youtube.com/watch?v=5U2bCVmWAiY" target="_blank">AD-IN Peak Series - EP02 (4.0+ Men's Double)</a>
       <a href="https://www.youtube.com/watch?v=eA_eyyqn3Mc" target="_blank">AD-IN Peak Series - EP03 (4.0+ Men's Double)</a>
     </div>
   </section>
 
+  <!-- 关于我 -->
   <section id="about">
     <h2>👤 About Me</h2>
     <p>
@@ -219,4 +189,8 @@
   </footer>
 </body>
 </html>
+
+
+
+
 
