@@ -104,6 +104,61 @@ nav a:hover {
     text-shadow: 0 0 10px rgba(0, 255, 163, 0.5);
 }
 
+/* Shared live destination: an entry point, never an unverified on-air indicator. */
+nav .nav-live {
+    color: var(--accent-color);
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 0.25rem;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 0 2.5rem;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.button-primary {
+    color: var(--bg-color);
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.button-primary:hover {
+    background: #72ffcc;
+}
+
+.button-secondary {
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.button-secondary:hover {
+    border-color: var(--accent-color);
+}
+
 /* Hero Section */
 .hero {
     padding: 100px 5% 60px;
@@ -349,9 +404,22 @@ footer {
 
     nav {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .contact-container {
         padding: 2rem;
     }
+}
+
+@media (max-width: 400px) {
+    nav { gap: 0.75rem; }
+    nav a { font-size: 0.8rem; }
+    .blog-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
 }
