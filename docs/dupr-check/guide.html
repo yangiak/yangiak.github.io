@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>首次使用 · DUPR Check</title><link rel="stylesheet" href="help.css"></head>
+<body><main>
+<nav><a href="guide.html" aria-current="page">使用说明</a><a href="privacy.html">隐私说明</a><a href="support.html">帮助与反馈</a></nav>
+<div class="eyebrow">DUPR CHECK · GET STARTED</div><h1>在赛事名单旁查看选手评分</h1>
+<p>手动查询、确认同名选手，把记录保存在当前浏览器。已保存的数据会优先显示。</p>
+<p class="note">插件会读取赛事表格中的姓名、地区和选手链接，查询时将姓名发送给 DUPR 并使用已登录的会话。选手 ID、评分、查询缓存和绑定保存在此浏览器，不上传给开发者。插件不读取、复制或保存 Cookie，不需要填写 Token。<a href="privacy.html">查看完整隐私说明</a></p><button id="consent-button" hidden>同意上述数据用途并开始</button><p id="consent-status" class="muted">首次使用请在插件弹窗中阅读数据用途并点击“同意并开始”。</p>
+<ol class="steps">
+<li><div><strong>固定插件，方便打开</strong><p>在 Chrome 工具栏点击拼图图标，找到本插件并点击图钉。若刚安装或更新，请刷新已打开的赛事页面。</p></div></li>
+<li><div><strong>登录自己的 DUPR</strong><p><a href="https://dashboard.dupr.com/" target="_blank" rel="noopener noreferrer">打开 DUPR</a>，完成登录并保留标签页。在插件弹窗中点击“测试连接”。只有你点击测试或联网查询时才会请求 DUPR。</p></div></li>
+<li><div><strong>展开赛事名单，点击“查 DUPR”</strong><p>支持 pickleballtournaments.com 的赛事表格，以及 brackets.pickleballtournaments.com 的 Overview、Pools、Final Standings 队伍表格。表格会增加“双打 DUPR”和“单打 DUPR”两列，双人队伍的分数上下对应。</p></div></li>
+<li><div><strong>核对身份后选择</strong><p>同名结果请核对全名、地区和 DUPR ID。姓名被缩写时，在选择框输入完整姓名；结果不在当前页时点击“加载更多”。地区排序只是辅助，不代表身份已被核验。</p></div></li>
+<li><div><strong>更新评分，查看变化</strong><p>已确认记录会优先显示。点击“更新记录”重新联网查询同一 DUPR ID，显示上涨、下跌或持平；“更换”重新选择选手。超过七天的绑定快照会标为“旧缓存”。</p></div></li>
+</ol>
+<h2>本地缓存怎么用？</h2><ul><li>七天内的搜索缓存可重复使用；跨页面全名匹配且地区不冲突的唯一记录会直接显示。</li><li>绿色 ✓ 表示曾确认过的记录；“缓存”表示尚待确认的匹配；“旧缓存”表示评分保存超过七天。</li><li>打开插件 → “打开选手库”可搜索本地选手、查看 DUPR ID 和保存时间。查看选手库不会联网。</li><li>“清空缓存”会删除评分、候选、绑定和涨跌记录。删除后刷新赛事页，或关闭并重新打开选手库。</li><li>NR 表示当前没有可展示的评分，不代表零分。缓存和涨跌均为查询快照，并非实时评分。</li></ul>
+<h2>查不到时</h2><p>先确认同一浏览器里的 DUPR 页面仍登录，网站内搜索可以正常使用，再点击“测试连接”。请求被拒绝或过于频繁时，插件会暂停后续联网请求一小时；请等待后手动重试。不要向任何人发送 Cookie、Token、密码或完整网络日志。</p>
+<p><a class="action" href="support.html">查看问题排查</a></p>
+<footer>独立开发的辅助工具，非 DUPR 或 PickleballTournaments 官方产品。可用性取决于网站和接口状态；使用受相关服务条款约束。说明对应 v1.0.23。</footer>
+</main><script src="guide.js"></script></body></html>

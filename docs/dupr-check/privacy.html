@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>隐私说明 · DUPR Check</title><link rel="stylesheet" href="help.css"></head>
+<body><main><nav><a href="guide.html">使用说明</a><a href="privacy.html" aria-current="page">隐私说明</a><a href="support.html">帮助与反馈</a></nav>
+<div class="eyebrow">PRIVACY NOTICE</div><h1>隐私说明</h1><p class="muted">生效日期：2026 年 11 月 5 日 · 适用版本：v1.0.23</p>
+<p>本说明适用于 Pickleball DUPR Checker（DUPR 分数查询助手）。扩展帮助用户在赛事表格中查询、核对和显示 DUPR 评分。扩展没有开发者运营的评分服务器，不包含广告、分析统计或跟踪 SDK。</p>
+<h2>处理哪些数据、用于什么目的？</h2>
+<table><thead><tr><th>数据</th><th>用途与保存位置</th></tr></thead><tbody>
+<tr><td>赛事表格的姓名、地区及选手链接；你手动输入的姓名</td><td>识别表格选手、排序同名候选和关联绑定。查询名称会保存在本地搜索缓存；选手链接可能用作本地绑定标识。扩展不记录完整浏览历史。</td></tr>
+<tr><td>DUPR 返回的全名、ID、地区、单双打评分</td><td>显示评分和帮助用户核对身份，以浏览器扩展本地存储保存候选及确认记录。</td></tr>
+<tr><td>评分保存时间、绑定关系、前一次评分和更新时间</td><td>复用缓存、提示旧数据及计算涨跌，均保存在当前浏览器。</td></tr>
+<tr><td>连接测试结果、请求限速时间、使用引导完成状态</td><td>显示连接状态、避免过于频繁请求和记住引导状态，保存在本地。</td></tr>
+</tbody></table>
+<h2>登录会话与发送给第三方的数据</h2>
+<p>用户需要自行登录 dashboard.dupr.com 并保留页面。仅在手动测试连接、查分、更新、按完整姓名搜索或加载更多时，扩展才在该已登录页面中执行固定的选手搜索请求。搜索名称（连接测试使用 Ben Johns）、分页和过滤参数发送至 api.dupr.com；浏览器依据 DUPR 的会话和 Cookie 设置携带认证信息。DUPR 同时可能收到正常网络请求产生的 IP 地址和浏览器请求信息。</p>
+<p>扩展不读取、复制或保存 Cookie、账户密码或新的 Bearer Token，也不会把这些信息传给开发者。早期开发版本遗留在扩展存储中的 Token 和 API 通道配置，会在安装／更新本版本时清除。用户自己的 DUPR 账户数据由 DUPR 按其<a href="https://www.dupr.com/privacy-policy" target="_blank" rel="noopener noreferrer">隐私政策</a>处理。</p>
+<p>扩展不会将姓名、评分、绑定或赛事访问记录上传给开发者，也不出售、出租或用于广告。用户主动打开 DUPR 登录页面、支持链接或网站时，对应网站会按各自政策处理访问。界面字体和脚本随扩展提供，不使用第三方字体服务。</p>
+<h2>保留期限与删除方式</h2>
+<p>搜索缓存超过七天不再作为有效搜索结果自动复用，但不会因此自动从存储删除。确认绑定会一直保留到用户清除；过期评分快照标为“旧缓存”。更新评分会替换最新快照并保留一次用于涨跌比较的旧评分，不建立无限历史。</p>
+<p>在弹窗点击“清空缓存”可删除全部选手搜索数据、确认绑定及涨跌记录；连接状态、限速状态和引导偏好不在这次清理范围内。请刷新已打开的赛事页以清除其内存中的显示。卸载扩展会清除它在此浏览器配置文件中的扩展存储；DUPR 自身的账户和 Cookie 不受影响。扩展不使用 chrome.storage.sync 云同步。</p>
+<h2>权限为什么需要？</h2><ul><li><strong>storage：</strong>在当前浏览器保存评分、绑定和界面状态。</li><li><strong>scripting：</strong>在用户已登录的 DUPR 标签页执行固定的评分搜索。</li><li><strong>赛事网站访问：</strong>在 pickleballtournaments.com 和 brackets.pickleballtournaments.com 的赛事表格插入查询按钮与评分列。</li><li><strong>DUPR 网站访问：</strong>查找 dashboard.dupr.com 登录页，并访问 api.dupr.com 的选手搜索服务。</li></ul>
+<h2>联系、支持邮件与政策页面</h2><p>联系邮箱：<a href="mailto:support@ykpickleball.com">support@ykpickleball.com</a>。如果你主动发邮件，开发者及邮箱服务提供商会处理你的邮件地址、邮件内容与附件，以回复和排查问题。这些邮件不会自动包含你的本地选手库。请勿发送登录凭据；你可以通过该邮箱提出访问、更正或删除支持邮件的请求，具体处理受适用法律及服务商备份机制限制。</p><p>公开访问 ykpickleball.com 上的政策或帮助页面时，网站托管服务可能处理 IP 地址、请求时间和浏览器信息等访问日志。这与扩展的本地选手存储分开；扩展不会自动向该网站上传选手库。</p>
+<h2>数据使用承诺与变更</h2><p>数据仅用于上述查分、核对、缓存及相关功能，遵守 Chrome Web Store User Data Policy（包括 Limited Use 要求）。任何改变会更新本说明，并按适用规则通知用户。你也可以通过<a href="support.html">帮助与反馈</a>联系开发者。</p>
+<footer>本扩展为独立工具，非 DUPR 或 PickleballTournaments 官方产品。</footer></main></body></html>
