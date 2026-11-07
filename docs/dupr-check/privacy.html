@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>隐私说明 · PickleScout</title><link rel="stylesheet" href="help.css"></head>
 <body><main><div class="language-switch" aria-label="显示语言"><a href="privacy.html" lang="zh-CN" aria-current="page">中文</a><a href="privacy.en.html" lang="en">English</a></div><nav><a href="guide.html">使用说明</a><a href="privacy.html" aria-current="page">隐私说明</a><a href="support.html">帮助与反馈</a></nav>
-<div class="eyebrow">PRIVACY NOTICE</div><h1>隐私说明</h1><p class="muted">生效日期：2026 年 11 月 6 日 · 适用版本：v1.1.0</p>
+<div class="eyebrow">PRIVACY NOTICE</div><h1>隐私说明</h1><p class="muted">生效日期：2026 年 11 月 6 日 · 适用版本：v1.1.2</p>
 <p>本说明适用于 PickleScout。扩展帮助用户在赛事表格中查询、核对和显示 DUPR 评分。扩展没有开发者运营的评分服务器，不包含广告、分析统计或跟踪 SDK。</p>
 <h2>处理哪些数据、用于什么目的？</h2>
 <table><thead><tr><th>数据</th><th>用途与保存位置</th></tr></thead><tbody>
@@ -11,9 +11,9 @@
 <tr><td>连接测试结果、请求限速时间、语言偏好、使用引导完成状态及数据用途同意版本</td><td>显示连接状态、避免过于频繁请求和记住界面语言、引导及同意状态，保存在本地。</td></tr>
 </tbody></table>
 <h2>Scout 趋势：Pickleball.com 评分历史</h2>
-<p>当你在 pickleball.com 的选手公开资料页点击「Scout 趋势」，扩展会进入同一选手的 Rating History，再在独立窗口读取当前页。你点击「加载下一页」「加载全部历史」或「重试」时，扩展才继续请求同一选手的分页。普通浏览、切换语言或单双打不会发起历史请求。</p>
+<p>当你在 pickleball.com 的选手公开资料页点击「Scout 趋势」，有缓存时直接在独立窗口显示。没有缓存时，扩展会进入同一选手的 Rating History 并读取当前页。点击「检查新比赛」「加载下一页」「加载全部历史」或「重试」会请求同一选手的历史。普通浏览、切换语言或单双打不会发起历史请求。</p>
 <p>处理的数据包括所选选手的姓名和 DUPR ID、个人页路径、比赛 ID、赛事名称、网站记录时间、项目、比分、胜负以及前后评分字段，用于按时间排序、赛事分组、评分趋势和相邻比赛评分差估算。请求将选手路径、页码及原页面的过滤参数发送至 pickleball.com；浏览器按该网站的设置使用现有登录会话。网站可能收到正常网络请求产生的 IP 地址及浏览器信息。此功能不直接调用 DUPR 搜索接口。</p>
-<p>本次历史记录仅保存在趋势窗口内存，关闭窗口后丢弃，不加入七天选手搜索缓存。原页面路径、待跳转操作、窗口会话及历史请求限速时间保存在 chrome.storage.session，浏览器重启后清除；窗口关闭会清除对应会话。语言偏好沿用扩展本地设置。历史记录不会上传给开发者，扩展不提取 Cookie 或账户凭据。评分差是相邻已读取记录的估算，历史不完整或时间顺序不明时会提示。</p>
+<p>趋势历史和保存时间存于此浏览器的扩展本地存储，关闭窗口后仍保留，与七天选手搜索缓存分开。可在趋势窗口点击「清除本选手趋势缓存」删除该选手的历史，卸载扩展可删除所有趋势缓存。原页面路径、待跳转操作、窗口会话及历史请求限速时间保存在 chrome.storage.session，浏览器重启后清除；窗口关闭会清除对应会话。语言偏好沿用扩展本地设置。历史记录不会上传给开发者，扩展不提取 Cookie 或账户凭据。评分差是相邻已读取记录的估算，历史不完整或时间顺序不明时会提示。</p>
 <p><strong>pickleball.com 访问权限：</strong>用于在选手公开资料页显示 Scout 入口，并在你主动点击后读取该选手评分历史。</p>
 <h2>登录会话与发送给第三方的数据</h2>
 <p>用户需要自行登录 dashboard.dupr.com 并保留页面。仅在手动测试连接、查分、更新、按完整姓名搜索或加载更多时，扩展才在该已登录页面中执行固定的选手搜索请求。搜索名称（连接测试使用 Ben Johns）、分页和过滤参数发送至 api.dupr.com；浏览器依据 DUPR 的会话和 Cookie 设置携带认证信息。DUPR 同时可能收到正常网络请求产生的 IP 地址和浏览器请求信息。</p>
