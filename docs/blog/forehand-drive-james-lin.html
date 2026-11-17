@@ -9,7 +9,32 @@
   <link rel="icon" href="../assets/logo.png" type="image/png">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="./post.css">
-</head>
+<!-- YK-GTM:start --><script>(() => {
+ 'use strict';
+ if (!/^https?:$/.test(location.protocol) || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || navigator.doNotTrack==='1' || navigator.globalPrivacyControl===true) return;
+ if(window.YKAnalytics)return;
+ window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+ const scope="website",measurement='G-17QPGMWYY3';
+ const path=location.pathname.replace(/\/{2,}/g,'/');
+ const cleanLocation=location.origin+path;
+ let cleanReferrer='';try{const ref=new URL(document.referrer);cleanReferrer=ref.origin+ref.pathname}catch{}
+ window.gtag('set',{page_location:cleanLocation,page_referrer:cleanReferrer,allow_google_signals:false,allow_ad_personalization_signals:false});
+ const allowed=new Set(['yk_page_view','yk_tool_trial_click','yk_assessment_start','yk_report_export']);
+ const formats=new Set(['html','pdf','jpeg','jpeg_zip','json','print']);
+ function track(event,format){if(!allowed.has(event))return;const data={event,yk_site:scope,page_path:path,page_location:cleanLocation};if(formats.has(format))data.export_format=format;window.dataLayer.push(data);const parameters={send_to:measurement,yk_site:scope,page_path:path,page_location:cleanLocation,page_referrer:cleanReferrer};if(formats.has(format))parameters.export_format=format;window.gtag('event',event,parameters)}
+ window.YKAnalytics={track};
+ track('yk_page_view');
+ let started=false;
+ document.addEventListener('input',start,true);document.addEventListener('change',start,true);
+ function start(e){if(started||!(e.target?.matches?.('.range,.dimension-score')))return;started=true;track('yk_assessment_start')}
+ document.addEventListener('click',e=>{const a=e.target?.closest?.('a[data-analytics="assessment-trial"]');if(a)track('yk_tool_trial_click')},true);
+ window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});
+ const first=document.getElementsByTagName('script')[0],script=document.createElement('script');
+ script.async=true;script.src='https://www.googletagmanager.com/gtm.js?id=GTM-PH8KL8FJ';
+ const nonce=document.querySelector('[nonce]');if(nonce)script.setAttribute('nonce',nonce.nonce||nonce.getAttribute('nonce'));
+ first.parentNode.insertBefore(script,first);
+})();</script><!-- YK-GTM:end --></head>
 <body>
   <header>
     <div class="header-brand"><img src="../assets/logo.png" alt="YK Pickleball Logo" class="logo-header"><span class="brand-name">YK Pickleball</span></div>

@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>网站访问统计说明 | YK Pickleball</title><link rel="icon" type="image/png" href="./assets/logo.png"><style>body{max-width:780px;margin:auto;padding:30px 20px;font:16px/1.8 system-ui,sans-serif;color:#243445}a,h1{color:#176d72}</style><!-- YK-GTM:start --><script>(() => {
+ 'use strict';
+ if (!/^https?:$/.test(location.protocol) || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname) || navigator.doNotTrack==='1' || navigator.globalPrivacyControl===true) return;
+ if(window.YKAnalytics)return;
+ window.dataLayer=window.dataLayer||[];
+ window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+ const scope="website",measurement='G-17QPGMWYY3';
+ const path=location.pathname.replace(/\/{2,}/g,'/');
+ const cleanLocation=location.origin+path;
+ let cleanReferrer='';try{const ref=new URL(document.referrer);cleanReferrer=ref.origin+ref.pathname}catch{}
+ window.gtag('set',{page_location:cleanLocation,page_referrer:cleanReferrer,allow_google_signals:false,allow_ad_personalization_signals:false});
+ const allowed=new Set(['yk_page_view','yk_tool_trial_click','yk_assessment_start','yk_report_export']);
+ const formats=new Set(['html','pdf','jpeg','jpeg_zip','json','print']);
+ function track(event,format){if(!allowed.has(event))return;const data={event,yk_site:scope,page_path:path,page_location:cleanLocation};if(formats.has(format))data.export_format=format;window.dataLayer.push(data);const parameters={send_to:measurement,yk_site:scope,page_path:path,page_location:cleanLocation,page_referrer:cleanReferrer};if(formats.has(format))parameters.export_format=format;window.gtag('event',event,parameters)}
+ window.YKAnalytics={track};
+ track('yk_page_view');
+ let started=false;
+ document.addEventListener('input',start,true);document.addEventListener('change',start,true);
+ function start(e){if(started||!(e.target?.matches?.('.range,.dimension-score')))return;started=true;track('yk_assessment_start')}
+ document.addEventListener('click',e=>{const a=e.target?.closest?.('a[data-analytics="assessment-trial"]');if(a)track('yk_tool_trial_click')},true);
+ window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});
+ const first=document.getElementsByTagName('script')[0],script=document.createElement('script');
+ script.async=true;script.src='https://www.googletagmanager.com/gtm.js?id=GTM-PH8KL8FJ';
+ const nonce=document.querySelector('[nonce]');if(nonce)script.setAttribute('nonce',nonce.nonce||nonce.getAttribute('nonce'));
+ first.parentNode.insertBefore(script,first);
+})();</script><!-- YK-GTM:end --></head><body><main><a href="./">返回首页</a><h1>网站访问统计说明</h1><p>本网站使用 Google Tag Manager 和 Google Analytics 了解页面访问、免费工具试用点击、开始自评及报告导出情况。统计结果仅供网站管理员查看，不在主页公开。</p><p>网站发送的自定义统计事件仅包含页面路径、网站分类及导出格式。报告昵称、技术评分、比赛记录、教练备注、邀请链接参数和下载文件内容不会被加入这些自定义事件。自评数据仍在当前页面内处理，刷新后清空。</p><p>Google 服务可能处理普通访问产生的 IP 地址、浏览器信息及 Cookie 等数据，具体取决于 Google 标签和浏览器设置。本网站的统计脚本尊重浏览器的 Do Not Track 和 Global Privacy Control 信号。广告个性化与 Google signals 在网站传入的设置中关闭。</p><p>Google 的数据处理方式请参阅 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 隐私政策</a>。PickleScout 扩展的隐私说明与本网站访问统计分别适用。</p></main></body></html>
